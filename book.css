@@ -1,0 +1,24 @@
+#book-input {
+    display: flex;
+    flex-direction: column;
+
+    width: 25vw;
+    margin-top: 20px;
+}
+
+#book-input input {
+    margin-bottom: 20px;
+}
+#book-input select {
+    margin-bottom: 20px;
+}
+
+#book-results {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#book-results h3 {
+    margin: 30px 0;
+}

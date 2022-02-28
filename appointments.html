@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CMU HealthConnect</title>
+        <meta charset="UTF-8">
+        <!-- styles -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="appointments.css">
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div id="navbar">
+                    <div id="navbar-left"><a href="login.html" class="link">Logout</a></div>
+                    <div id="navbar-center">
+                        <a href="#" class="link active">Your Appointments</a>
+                        <a href="book.html" class="link">Make a New Appointment +</a>
+                    </div>
+                    <div id="navbar-right"></div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="page">
+            <div class="page-title">
+                <h1>Hi, User</h1>
+            </div>
+        
+            <div id="appointments-list">
+                <h3>Upcoming Appointments</h3>
+                <a href="#" class="link" id="appointments-modal-button">Tuesday, February 1st (tomorrow)</a>
+                <h3>Past Appointments</h3>
+                <a href="#" class="link" id="appointments-modal-button">Sunday, January 30th</a>
+            </div>
+
+            <div id="appointments-modal" class="modal">
+                <div class="modal-content">
+                    <h1>Tuesday, February 1st (tomorrow)</h1>
+                    <div id="modal-date-time">
+                        <h4>5000 Forbes Avenue</h4>
+                        <h4>10:00 AM</h4>
+                    </div>
+
+                    <h5>Vaccine Type:</h5>
+                    <p class="small grey bold">Moderna</p>
+                    <h5>Pre-Existing Conditions:</h5>
+                    <p class="small grey bold">Immunocompromised</p>
+
+                    <a href="#" class="link close">Back</a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- JavaScript -->
+    <script src="modal.js"></script>
+
+</html>

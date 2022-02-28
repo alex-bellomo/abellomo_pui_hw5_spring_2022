@@ -1,0 +1,17 @@
+#appointments-list h3 {
+    margin: 30px 0;
+}
+
+/* MODAL */
+.modal-content h1 {
+    margin-bottom: 20px;
+}
+.modal-content h5 {
+    margin-bottom: 5px;
+}
+.modal-content p {
+    margin-bottom: 10px;
+}
+#modal-date-time {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,139 @@
+/*
+switched navbar order 
+added address to appointments
+*/
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* TEXT */
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+p.small {
+    font-size: 0.75rem;
+}
+p.grey {
+    color: rgb(82, 82, 82);
+}
+p.bold {
+    font-weight: bold;
+}
+
+/* NAVBAR */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #e7e7e7;
+    padding: 25px;
+}
+#navbar a {
+    padding: 0px 20px;
+}
+
+/* DEFAULT PAGE */
+.page {
+    padding: 40px;
+}
+.page-title {
+
+}
+
+/* BUTTONS */
+.link {
+    color: #7D7D7D;
+    font-weight: bold;
+}
+.link:visited {
+    color: #7D7D7D;
+    font-weight: bold;
+}
+.link.active {
+    color: black;
+}
+.link.inactive {
+    text-decoration: none;
+    cursor: auto;
+}
+
+.button {
+    padding: 15px 25px;
+    border-radius: 5px;
+
+    background-color: #7D7D7D;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: #585858;
+}
+.button.small {
+    padding: 15px 15px;
+
+    background-color: #ececec;
+    color: black;
+}
+.button.small:hover {
+    background-color: #e0e0e0;
+    text-decoration: underline;
+}
+
+/* INPUTS */
+label {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+input {
+    outline: none;
+
+    padding: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
+    background-color: #ececec;
+}
+select {
+    outline: none;
+
+    padding: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
+    background-color: #ececec;
+}
+
+/* MODAL */
+.modal {
+    z-index: 1;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.35);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+
+    background: white;
+    padding: 30px 40px;
+    border-radius: 5px;
+}
+
+.modal .close {
+    margin-top: 30px;
+}
