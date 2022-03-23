@@ -17,7 +17,7 @@
                 <div id="navbar">
                     <div id="navbar-left"><a href="index.html" class="link">Logout</a></div>
                     <div id="navbar-center">
-                        <a href="appointments.html" class="link">Your Appointments</a>
+                        <a href="appointments.html" class="link">Your Appointments<sup id="count-upcoming"></sup></a>
                         <a href="#" class="link active">Make a New Appointment +</a>
                     </div>
                     <div id="navbar-right"></div>
@@ -32,25 +32,40 @@
         
             <div id="book-input">
                 <label for="appointment-type">Appointment Type:</label>
-                <select id="appointment-type">
-                    <option value="vaccine">COVID-19 Vaccine</option>
-                    <option value="test">PCR Testing</option>
+                <select id="appointment-type" onchange="getAppointmentResults();">
+                    <option value="Vaccine">COVID-19 Vaccine</option>
+                    <option value="PCR Test">PCR Testing</option>
                 </select>
                 <label for="appointment-location">Appointment Location:</label>
                 <select id="appointment-location">
                     <option value="east-campus-garage">East Campus Garage</option>
                 </select>
                 <label for="date">Date:</label>
-                <input type="date" id="date">
+                <input type="date" id="appointment-date" onchange="getAppointmentResults()">
             </div>
 
-            <div id="book-results">
-                <h3>Monday, January 31st (today)</h3>
-                <a href="#" class="link inactive">No Appointments Available</a>
-                <h3>Tuesday, February 1st (tomorrow)</h3>
-                <a href="#" class="button small" id="book-modal-button">10:00 AM</a>
+            <div id="available-appointments-list">
+            </div>
+
+            <div id="book-modal" class="modal">
+                <div class="modal-content" id="modal-content">
+                    <div id="modal-date"></div>
+                    <div id="modal-type"></div>
+                    <div id="modal-time"></div>
+
+                    <div id="modal-vaccine-type"></div>
+                    <div id="modal-preexisting-conditions"></div>
+
+                    <div class="split" id="modal-buttons">
+                        <a href="#" class="link close">Back</a>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
+
+    <!-- JavaScript -->
+    <script src="objects.js"></script>
+    <script src="book.js"></script>
 
 </html>

@@ -13,12 +13,33 @@
     margin-bottom: 20px;
 }
 
-#book-results {
+#available-appointments-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-#book-results h3 {
+#available-appointments-list h3 {
     margin: 30px 0;
+}
+
+#available-appointments-list .button {
+    margin-right: 20px;
+}
+
+/* MODAL */
+.modal-content h1 {
+    margin-bottom: 20px;
+}
+.modal-content h5 {
+    margin-bottom: 5px;
+}
+.modal-content p {
+    margin-bottom: 10px;
+}
+#modal-date-time {
+    margin-bottom: 20px;
+}
+#modal-type {
+    margin-bottom: 20px;
 }

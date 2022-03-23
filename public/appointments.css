@@ -15,3 +15,10 @@
 #modal-date-time {
     margin-bottom: 20px;
 }
+#modal-type {
+    margin-bottom: 20px;
+}
+
+#appointments-list .button {
+    margin-right: 20px;
+}
