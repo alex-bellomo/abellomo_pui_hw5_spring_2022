@@ -79,6 +79,12 @@ function filterAppointments(apptList, attr, val) {
           if (val && val.includes(element[0])) res[element[0]] = element[1]
           return res
       }, {});
+    // Return appointments that match given ids
+    case "notId":
+      return Object.entries(apptList).reduce((res, element) => {
+          if (val && !val.includes(element[0])) res[element[0]] = element[1]
+          return res
+      }, {});
   }
 }
 

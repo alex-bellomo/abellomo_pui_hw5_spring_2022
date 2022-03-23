@@ -35,23 +35,31 @@ function populateModal(appointment) {
         '<h1>' + 
         parseFullDateWithTime(appointment[1].time) +
         '</h1>';
+
     document.getElementById("modal-type").innerHTML = 
         '<h2>' + appointment[1].type + ' Appointment</h2>';
+
     document.getElementById("modal-time").innerHTML = 
         '<h4>' + appointment[1].location + '</h4>' +
         '<h4>' + appointment[1].time.toLocaleTimeString([], {timeStyle: "short"}) + '</h4><br/>';
+
+    document.getElementById("modal-vaccine-type").innerHTML = "";
     if(appointment[1].vaccine_type) {
         document.getElementById("modal-vaccine-type").innerHTML = 
             '<h5>Vaccine Type:</h5><p class="small grey bold">' + 
             appointment[1].vaccine_type + '</p>';
     }
+
+    document.getElementById("modal-preexisting-conditions").innerHTML = "";
     if (appointment[1].preexisting_conditions) {
         document.getElementById("modal-preexisting-conditions").innerHTML = 
             '<h5>Pre-Existing Conditions:</h5><p class="small grey bold">' + 
             appointment[1].preexisting_conditions + '</p>';
     }
+
+    document.getElementById("modal-results").innerHTML = "";
     if (appointment[1].result && appointment[1].time < now) {
-        document.getElementById("modal-preexisting-conditions").innerHTML = 
+        document.getElementById("modal-results").innerHTML = 
             '<h5>Result:</h5><p class="small grey bold">' + 
             appointment[1].result + '</p>';
     }
