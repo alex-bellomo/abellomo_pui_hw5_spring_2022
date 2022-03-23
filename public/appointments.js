@@ -112,11 +112,10 @@ function getAppointmentResults() {
     noPast.innerText = "No appointments";
     pastAppointmentsList.appendChild(noPast);
 
-    let filteredAppointments = filterAppointments(appointments, "id", localStorage.getItem("booked"));
+    let filteredAppointments = filterAppointments(appointments, "id", localStorage.getItem("booked") || "");
     
     // Iterate through each booked appointment
     Object.entries(filteredAppointments).forEach(appointment => {
-        console.log(appointment);
         // Construct buttons
         let a = document.createElement('a');
         a.href="#";
