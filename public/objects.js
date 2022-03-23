@@ -2,10 +2,8 @@
 function getCountUpcoming() {
   let notification = document.getElementById("count-upcoming");
   let count = window.localStorage.getItem("booked") || "";
-  console.log(count);
   count = count.split(" ").length - 1;
 
-  console.log(count);
   notification.innerHTML = count;
 }
 
@@ -82,7 +80,9 @@ function filterAppointments(apptList, attr, val) {
     // Return appointments that match given ids
     case "notId":
       return Object.entries(apptList).reduce((res, element) => {
-          if (val && !val.includes(element[0])) res[element[0]] = element[1]
+          console.log(val);
+          console.log(element[0]);
+          if (!val || !val.includes(element[0])) res[element[0]] = element[1]
           return res
       }, {});
   }

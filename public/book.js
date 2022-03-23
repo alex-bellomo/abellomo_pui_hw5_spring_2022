@@ -117,8 +117,11 @@ function getAppointmentResults() {
     if (getSelectedDate() == null) return;
 
     let filteredAppointments = filterByType(appointments);
+    console.log(filteredAppointments);
     filteredAppointments = filterByNextSevenDays(filteredAppointments);
+    console.log(filteredAppointments);
     filteredAppointments = filterAppointments(filteredAppointments, "notId", localStorage.getItem("booked"));
+    console.log(filteredAppointments);
 
     let groupedAppointments = groupAppointments(filteredAppointments, "day")
 

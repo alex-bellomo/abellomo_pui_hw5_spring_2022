@@ -114,8 +114,6 @@ function getAppointmentResults() {
 
     let filteredAppointments = filterAppointments(appointments, "id", localStorage.getItem("booked"));
     
-    console.log(filteredAppointments);
-
     // Iterate through each booked appointment
     Object.entries(filteredAppointments).forEach(appointment => {
         console.log(appointment);
