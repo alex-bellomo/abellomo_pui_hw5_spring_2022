@@ -67,8 +67,9 @@ function filterAppointments(apptList, attr, val) {
           let weekAfterSelectedDate = new Date();
           weekAfterSelectedDate.setDate(val.getDate() + 7);
 
-          if (parseFullDate(element[1].time) >= parseFullDate(selectedDate) && 
-              parseFullDate(element[1].time) < parseFullDate(weekAfterSelectedDate)) res[element[0]] = element[1]
+          if (element[1].time >= selectedDate && element[1].time < weekAfterSelectedDate) {
+            res[element[0]] = element[1]
+          }
           return res
       }, {});
     // Return appointments that match given ids
