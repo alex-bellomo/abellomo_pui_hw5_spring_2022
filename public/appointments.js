@@ -121,7 +121,10 @@ function getAppointmentResults() {
         a.href="#";
         a.classList.add("button");
         a.classList.add("small");
-        a.appendChild(document.createTextNode(parseTime(appointment[1].time)));
+        a.appendChild(document.createTextNode(
+            appointment[1].type + 
+            " " +
+            parseTime(appointment[1].time)));
 
         a.onclick = function() { populateModal(appointment); }
 

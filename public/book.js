@@ -96,7 +96,7 @@ function populateModal(appointment) {
 
     // Book button
     a = document.createElement('a');
-    a.href="#";
+    a.href="appointments.html";
     a.classList.add("button")
     a.appendChild(document.createTextNode("Book"));
 
@@ -112,9 +112,12 @@ function populateModal(appointment) {
 function getAppointmentResults() {
     // Reset found appointments
     let availableAppointmentList = document.getElementById("available-appointments-list");
-    availableAppointmentList.innerHTML = "";
+    availableAppointmentList.innerHTML = "<p id='nonefound' class='grey'>No Appointments found. Did you enter your information correctly?</p>";
 
     if (getSelectedDate() == null) return;
+
+    // Clear not found message
+    availableAppointmentList.innerHTML = "";
 
     let filteredAppointments = filterByType(appointments);
     filteredAppointments = filterByNextSevenDays(filteredAppointments);
