@@ -59,6 +59,12 @@ function filterAppointments(apptList, attr, val) {
           if (element[1].type == val) res[element[0]] = element[1]
           return res
       }, {});
+    // Return appointments of same vaccine type
+    case "vaccine type":
+      return Object.entries(apptList).reduce((res, element) => {
+          if (element[1].vaccine_type == val) res[element[0]] = element[1]
+          return res
+      }, {});
     // Return appointments of same day or within next seven days
     case "nextSevenDays":
       return Object.entries(apptList).reduce((res, element) => {

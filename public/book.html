@@ -38,6 +38,11 @@
                     <option value="Vaccine">COVID-19 Vaccine</option>
                     <option value="PCR Test">PCR Testing</option>
                 </select>
+                <label for="vaccine-type" id="vaccine-type-label">Vaccine Type:</label>
+                <select id="vaccine-type" onchange="getAppointmentResults();">
+                    <option value="Moderna">Moderna</option>
+                    <option value="Pfizer">Pfizer</option>
+                </select>
                 <label for="appointment-location">Appointment Location:</label>
                 <select id="appointment-location">
                     <option value="east-campus-garage">East Campus Garage</option>

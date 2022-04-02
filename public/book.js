@@ -16,6 +16,14 @@ function book(appointment) {
     getCountUpcoming();
 }
 
+function getSelectedDate() {
+    let appointmentDateSelectBox = document.getElementById("appointment-date");
+    let appointmentDateSelectBoxValue = appointmentDateSelectBox.value;
+    if (appointmentDateSelectBoxValue == "") return null;
+    // Convert to local timezone
+    return new Date(appointmentDateSelectBoxValue + "T00:00");
+}
+
 // Change the results based on the appointment type selected
 function filterByType(appts) {
     let appointmentTypeSelectBox = document.getElementById("appointment-type");
@@ -24,12 +32,12 @@ function filterByType(appts) {
     return filterAppointments(appts, "type", appointmentTypeSelectBoxValue);
 }
 
-function getSelectedDate() {
-    let appointmentDateSelectBox = document.getElementById("appointment-date");
-    let appointmentDateSelectBoxValue = appointmentDateSelectBox.value;
-    if (appointmentDateSelectBoxValue == "") return null;
-    // Convert to local timezone
-    return new Date(appointmentDateSelectBoxValue + "T00:00");
+// Change the results based on the appointment type selected
+function filterByVaccineType(appts) {
+    let vaccineTypeSelectBox = document.getElementById("vaccine-type");
+    let vaccineTypeSelectBoxValue = vaccineTypeSelectBox.options[vaccineTypeSelectBox.selectedIndex].value;
+
+    return filterAppointments(appts, "vaccine type", vaccineTypeSelectBoxValue);
 }
 
 // Change the results based on the appointment date selected
@@ -108,11 +116,32 @@ function populateModal(appointment) {
     modal.style.display = "flex";
 }
 
+// Hide or unhide vaccine type select box
+function updateVaccineInput() {
+    // Reset vaccine type select box to invisible
+    let vaccineTypeSelectBox = document.getElementById("vaccine-type");
+    let vaccineTypeSelectBoxLabel = document.getElementById("vaccine-type-label");
+
+    vaccineTypeSelectBox.style.display = "none";
+    vaccineTypeSelectBoxLabel.style.display = "none";
+
+    let appointmentTypeSelectBox = document.getElementById("appointment-type");
+    let appointmentTypeSelectBoxValue = appointmentTypeSelectBox.options[appointmentTypeSelectBox.selectedIndex].value;
+
+    // Make vaccine type select box visible if appointment type is vaccine
+    if (appointmentTypeSelectBoxValue == "Vaccine") {
+        vaccineTypeSelectBox.style.display = "inline";
+        vaccineTypeSelectBoxLabel.style.display = "inline";
+    }
+}
+
 // Get appointment results based on input and construct modal / page elements
 function getAppointmentResults() {
     // Reset found appointments
     let availableAppointmentList = document.getElementById("available-appointments-list");
     availableAppointmentList.innerHTML = "<p id='nonefound' class='grey'>No Appointments found. Did you enter your information correctly?</p>";
+
+    updateVaccineInput();
 
     if (getSelectedDate() == null) return;
 
@@ -120,6 +149,7 @@ function getAppointmentResults() {
     availableAppointmentList.innerHTML = "";
 
     let filteredAppointments = filterByType(appointments);
+    filteredAppointments = filterByVaccineType(filteredAppointments);
     filteredAppointments = filterByNextSevenDays(filteredAppointments);
     filteredAppointments = filterAppointments(filteredAppointments, "notId", localStorage.getItem("booked") || "");
 
